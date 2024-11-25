@@ -6,17 +6,10 @@
  * University: Universidad de las Fuerzas Armadas - ESPE
  ***********************************************************************/
 #include "ListasDoble.h"
+#include "Validaciones.h"
 #include <iostream>
-#include <regex>
 using namespace std;
 
-bool validarCedula(string cedula) {
-    return regex_match(cedula, regex("\\d{10}"));
-}
-
-bool validarSoloLetras(string texto) {
-    return regex_match(texto, regex("[A-Za-z ]+"));
-}
 
 int main() {
     ListaDoble lista;
@@ -36,27 +29,28 @@ int main() {
         cin >> opcion;
 
         switch (opcion) {
-            case 1:
-                cout << "Ingrese cedula (10 dígitos): ";
-                cin >> cedula;
-                if (!validarCedula(cedula)) {
-                    cout << "Error: La cedula debe contener 10 dígitos.\n";
+            case 1: {
+                long int cedulaNumerica = ingresarCedula();
+                if (!validarCedulaReal(cedulaNumerica)) {
+                    imprimirResultadoCedula(false);
                     break;
                 }
+                imprimirResultadoCedula(true);
                 cout << "Ingrese nombre: ";
                 cin >> nombre;
-                if (!validarSoloLetras(nombre)) {
+                if (!validarTexto(nombre)) {
                     cout << "Error: El nombre debe contener solo letras.\n";
                     break;
                 }
                 cout << "Ingrese apellido: ";
                 cin >> apellido;
-                if (!validarSoloLetras(apellido)) {
+                if (!validarTexto(apellido)) {
                     cout << "Error: El apellido debe contener solo letras.\n";
                     break;
                 }
-                lista.insertar(cedula, nombre, apellido);
+                lista.insertar(to_string(cedulaNumerica), nombre, apellido);
                 break;
+            }
 
             case 2:
                 cout << "Ingrese cedula a buscar: ";
@@ -101,6 +95,7 @@ int main() {
             default:
                 cout << "Opcion no valida. Por favor, intente nuevamente.\n";
         }
+        system("pause");
     } while (opcion != 6);
 
     return 0;

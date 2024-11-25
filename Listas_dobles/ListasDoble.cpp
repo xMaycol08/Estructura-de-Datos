@@ -33,7 +33,7 @@ bool ListaDoble::validarCedulaUnica(string cedula) {
 
 void ListaDoble::insertar(string cedula, string nombre, string apellido) {
     if (!validarCedulaUnica(cedula)) {
-        cout << "Error: La cédula ya existe en la lista.\n";
+        cout << "Error: La cï¿½dula ya existe en la lista.\n";
         return;
     }
 
@@ -63,7 +63,7 @@ Nodo* ListaDoble::buscar(string cedula) {
 bool ListaDoble::eliminar(string cedula) {
     Nodo* temp = buscar(cedula);
     if (temp == nullptr) {
-        cout << "Persona con cédula " << cedula << " no encontrada.\n";
+        cout << "Persona con cï¿½dula " << cedula << " no encontrada.\n";
         return false;
     }
 
@@ -98,7 +98,7 @@ void ListaDoble::mostrar() {
         return;
     }
     while (temp != nullptr) {
-        cout << "<Cédula: " << temp->getCedula() << ", Nombre: " << temp->getNombre() << ", Apellido: " << temp->getApellido() << "> -> ";
+        cout << "<Cï¿½dula: " << temp->getCedula() << ", Nombre: " << temp->getNombre() << ", Apellido: " << temp->getApellido() << "> -> ";
         temp = temp->getSiguiente();
     }
     cout << "NULL\n";
@@ -107,7 +107,7 @@ void ListaDoble::mostrar() {
 void ListaDoble::eliminarCaracter(string cedula, char caracter) {
     Nodo* temp = buscar(cedula);
     if (temp == nullptr) {
-        cout << "Cédula no encontrada.\n";
+        cout << "Cï¿½dula no encontrada.\n";
         return;
     }
 
@@ -120,5 +120,5 @@ void ListaDoble::eliminarCaracter(string cedula, char caracter) {
     temp->setNombre(nuevoNombre);
     temp->setApellido(nuevoApellido);
 
-    cout << "Carácter eliminado correctamente.\n";
+    cout << "Carï¿½cter eliminado correctamente.\n";
 }
