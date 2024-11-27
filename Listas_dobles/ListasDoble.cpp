@@ -1,6 +1,6 @@
 /***********************************************************************
  * Module:  ListasDoble.cpp
- * Author:  Maycol Celi,Erika Guayanay, Jerson Llumiquinga.
+ * Author:  Maycol Celi
  * Date: 25/11/2024
  * University: Universidad de las Fuerzas Armadas - ESPE
  ***********************************************************************/
@@ -33,7 +33,7 @@ bool ListaDoble::validarCedulaUnica(string cedula) {
 
 void ListaDoble::insertar(string cedula, string nombre, string apellido) {
     if (!validarCedulaUnica(cedula)) {
-        cout << "Error: La c�dula ya existe en la lista.\n";
+        cout << "Error: La cedula ya existe en la lista.\n";
         return;
     }
 
@@ -63,7 +63,7 @@ Nodo* ListaDoble::buscar(string cedula) {
 bool ListaDoble::eliminar(string cedula) {
     Nodo* temp = buscar(cedula);
     if (temp == nullptr) {
-        cout << "Persona con c�dula " << cedula << " no encontrada.\n";
+        cout << "Persona con cedula " << cedula << " no encontrada.\n";
         return false;
     }
 
@@ -98,7 +98,7 @@ void ListaDoble::mostrar() {
         return;
     }
     while (temp != nullptr) {
-        cout << "<C�dula: " << temp->getCedula() << ", Nombre: " << temp->getNombre() << ", Apellido: " << temp->getApellido() << "> -> ";
+        cout << "<Cedula: " << temp->getCedula() << ", Nombre: " << temp->getNombre() << ", Apellido: " << temp->getApellido() << "> -> ";
         temp = temp->getSiguiente();
     }
     cout << "NULL\n";
@@ -107,7 +107,7 @@ void ListaDoble::mostrar() {
 void ListaDoble::eliminarCaracter(string cedula, char caracter) {
     Nodo* temp = buscar(cedula);
     if (temp == nullptr) {
-        cout << "C�dula no encontrada.\n";
+        cout << "Cedula no encontrada.\n";
         return;
     }
 
@@ -120,5 +120,5 @@ void ListaDoble::eliminarCaracter(string cedula, char caracter) {
     temp->setNombre(nuevoNombre);
     temp->setApellido(nuevoApellido);
 
-    cout << "Car�cter eliminado correctamente.\n";
+    cout << "Caracter eliminado correctamente.\n";
 }

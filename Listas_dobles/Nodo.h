@@ -1,6 +1,6 @@
 /***********************************************************************
  * Module:  Nodo.h
- * Author:  Maycol Celi,Erika Guayanay, Jerson Llumiquinga.
+ * Author:  Maycol Celi
  * Date: 25/11/2024
  * University: Universidad de las Fuerzas Armadas - ESPE
  ***********************************************************************/
