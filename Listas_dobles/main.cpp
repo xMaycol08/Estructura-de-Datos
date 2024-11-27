@@ -1,7 +1,7 @@
 /***********************************************************************
  * Module:  main.cpp
- * Author:  Maycol Celi,Erika Guayanay, Jerson Llumiquinga.
- * Date: 25/11/2024
+ * Author:  Maycol Celi.
+ * Date: 27/11/2024
  * Purpose: Lista de Personas con Listas Dobles
  * University: Universidad de las Fuerzas Armadas - ESPE
  ***********************************************************************/
