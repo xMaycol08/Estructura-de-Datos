@@ -1,3 +1,10 @@
+/***********************************************************************
+ * Module:  main.cpp
+ * Author:  Maycol Celi
+ * Date: 27/11/2024
+ * Purpose: Lista de Personas con Listas Circulares.
+ * University: Universidad de las Fuerzas Armadas - ESPE
+ ***********************************************************************/
 #include "ListasCirculares.h"
 #include "Validaciones.h"
 #include <iostream>
