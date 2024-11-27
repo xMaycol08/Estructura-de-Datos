@@ -10,6 +10,13 @@
 #include <iostream>
 using namespace std;
 
+void limpiarConsola() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
 
 int main() {
     ListaDoble lista;
@@ -18,6 +25,7 @@ int main() {
     int opcion;
 
     do {
+        limpiarConsola();
         cout << "\n*** Menu de opciones ***\n";
         cout << "1. Insertar persona\n";
         cout << "2. Buscar persona\n";
@@ -30,24 +38,31 @@ int main() {
 
         switch (opcion) {
             case 1: {
-                long int cedulaNumerica = ingresarCedula();
-                if (!validarCedulaReal(cedulaNumerica)) {
-                    imprimirResultadoCedula(false);
-                    break;
-                }
+                long int cedulaNumerica;
+                do {
+                    cedulaNumerica = ingresarCedula();
+                    if (!validarCedulaReal(cedulaNumerica)) {
+                        imprimirResultadoCedula(false);
+                    }
+                } while (!validarCedulaReal(cedulaNumerica));
                 imprimirResultadoCedula(true);
-                cout << "Ingrese nombre: ";
-                cin >> nombre;
-                if (!validarTexto(nombre)) {
-                    cout << "Error: El nombre debe contener solo letras.\n";
-                    break;
-                }
-                cout << "Ingrese apellido: ";
-                cin >> apellido;
-                if (!validarTexto(apellido)) {
-                    cout << "Error: El apellido debe contener solo letras.\n";
-                    break;
-                }
+
+                do {
+                    cout << "Ingrese nombre: ";
+                    cin >> nombre;
+                    if (!validarTexto(nombre)) {
+                        cout << "Error: El nombre debe contener solo letras. Intente nuevamente.\n";
+                    }
+                } while (!validarTexto(nombre));
+
+                do {
+                    cout << "Ingrese apellido: ";
+                    cin >> apellido;
+                    if (!validarTexto(apellido)) {
+                        cout << "Error: El apellido debe contener solo letras. Intente nuevamente.\n";
+                    }
+                } while (!validarTexto(apellido));
+
                 lista.insertar(to_string(cedulaNumerica), nombre, apellido);
                 break;
             }
@@ -95,7 +110,11 @@ int main() {
             default:
                 cout << "Opcion no valida. Por favor, intente nuevamente.\n";
         }
-        system("pause");
+
+        if (opcion != 6) {
+            cout << "\nPresione cualquier tecla para regresar al menu...\n";
+            system("pause");
+        }
     } while (opcion != 6);
 
     return 0;
