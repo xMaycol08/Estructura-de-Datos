@@ -20,7 +20,7 @@ bool ListaCircular::validarCedulaUnica(string cedula) {
 
 void ListaCircular::insertar(string cedula, string nombre, string apellido) {
     if (!validarCedulaUnica(cedula)) {
-        cout << "Error: La cédula ya existe en la lista.\n";
+        cout << "Error: La cedula ya existe en la lista.\n";
         return;
     }
 
@@ -53,7 +53,7 @@ Nodo* ListaCircular::buscar(string cedula) {
 
 bool ListaCircular::eliminar(string cedula) {
     if (primero == nullptr) {
-        cout << "La lista está vacía.\n";
+        cout << "La lista está vacia.\n";
         return false;
     }
 
@@ -71,7 +71,7 @@ bool ListaCircular::eliminar(string cedula) {
     } while (actual != primero);
 
     if (!encontrado) {
-        cout << "Cédula no encontrada.\n";
+        cout << "Cedula no encontrada.\n";
         return false;
     }
 
@@ -103,7 +103,7 @@ void ListaCircular::mostrar() {
     }
 
     do {
-        cout << "<Cédula: " << actual->getCedula() << ", Nombre: " << actual->getNombre()
+        cout << "<Cedula: " << actual->getCedula() << ", Nombre: " << actual->getNombre()
              << ", Apellido: " << actual->getApellido() << "> -> ";
         actual = actual->getSiguiente();
     } while (actual != primero);
@@ -114,7 +114,7 @@ void ListaCircular::mostrar() {
 void ListaCircular::eliminarCaracter(string cedula, char caracter) {
     Nodo* actual = buscar(cedula);
     if (actual == nullptr) {
-        cout << "Cédula no encontrada.\n";
+        cout << "Cedula no encontrada.\n";
         return;
     }
 
@@ -127,5 +127,5 @@ void ListaCircular::eliminarCaracter(string cedula, char caracter) {
     actual->setNombre(nuevoNombre);
     actual->setApellido(nuevoApellido);
 
-    cout << "Carácter eliminado correctamente.\n";
+    cout << "Caracter eliminado correctamente.\n";
 }

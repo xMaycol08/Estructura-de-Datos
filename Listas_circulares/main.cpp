@@ -95,7 +95,7 @@ int main() {
                 break;
 
             default:
-                cout << "Opción no valida. Intente nuevamente.\n";
+                cout << "Opcion no valida. Intente nuevamente.\n";
         }
         system("pause");
     } while (opcion != 6);
