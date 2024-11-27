@@ -1,24 +1,25 @@
+/***********************************************************************
+ * Module:  main_llistas_simples.cpp
+ * Author:  Maycol Celi
+ * Date: 27/11/2024
+ * Purpose: Lista Simple de Personas
+ * University: Universidad de las Fuerzas Armadas - ESPE
+ ***********************************************************************/
 #include "Lista_Simple.h"
 #include "Validaciones.h"
 #include <iostream>
 #include <cstdlib> // Para system("cls") o system("clear")
 using namespace std;
 
-// Funci�n para limpiar la consola
+// Funcion para limpiar la consola
 void limpiarConsola() {
 #ifdef _WIN32
     system("cls"); // Windows
 #else
-    system("clear"); // Linux/Mac
+    system("clear");
 #endif
 }
 
-// Funci�n para pausar la consola
-void pausa() {
-    cout << "\nPresione ENTER para continuar...";
-    cin.ignore();
-    cin.get();
-}
 
 int main() {
     ListaSimple listaPrincipal;
@@ -79,7 +80,7 @@ int main() {
                 listaPrincipal.insertarACola(cedula, nombre, apellido);
                 registrarCedula(cedula); // Registrar c�dula en el conjunto
                 cout << "Persona registrada exitosamente.\n";
-                pausa();
+
                 break;
             }
 
@@ -101,7 +102,7 @@ int main() {
                 } else {
                     cout << "Error: Persona no encontrada.\n";
                 }
-                pausa();
+
                 break;
             }
 
@@ -123,13 +124,13 @@ int main() {
                     eliminarCedula(cedula); // Eliminar c�dula del conjunto
                     cout << "Persona eliminada exitosamente.\n";
                 }
-                pausa();
+
                 break;
             }
 
             case 4: { // Mostrar lista principal
                 listaPrincipal.mostrar();
-                pausa();
+
                 break;
             }
 
@@ -151,28 +152,29 @@ int main() {
                     cin >> caracter;
                     listaPrincipal.eliminarCaracter(cedula, caracter, listaAuxiliar);
                 }
-                pausa();
+
                 break;
             }
 
             case 6: { // Mostrar lista auxiliar
                 listaAuxiliar.mostrar();
-                pausa();
+
                 break;
             }
 
             case 7: { // Salir
                 cout << "Saliendo...\n";
-                pausa();
+
                 break;
             }
 
             default: {
-                cout << "Opci�n invalida. Intente de nuevo.\n";
-                pausa();
+                cout << "Opcion invalida. Intente de nuevo.\n";
+
                 break;
             }
         }
+        system("pause");
     } while (opcion != 7);
 
     return 0;

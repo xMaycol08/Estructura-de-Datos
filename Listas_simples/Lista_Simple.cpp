@@ -1,3 +1,4 @@
+
 #include "Lista_Simple.h"
 #include <iostream>
 #include <algorithm> // Asegúrate de incluir este encabezado
