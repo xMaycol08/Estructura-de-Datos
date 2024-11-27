@@ -139,7 +139,7 @@ int main() {
                     cout << "Ingrese cedula: ";
                     cin >> cedula;
                     if (!validarCedulaReal(cedula)) {
-                        cout << "Cedula inv�lida. Intente de nuevo.\n";
+                        cout << "Cedula invalida. Intente de nuevo.\n";
                     } else {
                         break;
                     }

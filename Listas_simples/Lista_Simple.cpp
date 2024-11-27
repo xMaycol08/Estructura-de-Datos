@@ -75,7 +75,7 @@ bool ListaSimple::eliminar(string cedula) {
         anterior = temp;
         temp = temp->getSiguiente();
     }
-    cout << "Persona con cédula " << cedula << " no encontrada.\n";
+    cout << "Persona con cedula " << cedula << " no encontrada.\n";
     return false;
 }
 
@@ -86,7 +86,7 @@ void ListaSimple::mostrar() {
         return;
     }
     while (temp != nullptr) {
-        cout << "Cédula: " << temp->getCedula()
+        cout << "Cedula: " << temp->getCedula()
              << "\nNombre: " << temp->getNombre()
              << "\nApellido: " << temp->getApellido() << " -> ";
         temp = temp->getSiguiente();
