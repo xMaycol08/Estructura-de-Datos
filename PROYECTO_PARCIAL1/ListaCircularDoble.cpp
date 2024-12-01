@@ -1,5 +1,6 @@
 #include "ListaCircularDoble.h"
 #include <iostream>
+
 using namespace std;
 
 ListaCircularDoble::ListaCircularDoble() : cabeza(nullptr) {}
@@ -96,7 +97,7 @@ void ListaCircularDoble::mostrar() {
     NodoLibro* actual = cabeza;
     do {
         cout << "Titulo: " << actual->getTitulo() << ", Autor: " << actual->getAutor()
-             << ", Ano: " << actual->getAnioPublicacion() << ", ISBN: " << actual->getISBN()
+             << ", Año: " << actual->getAnioPublicacion() << ", ISBN: " << actual->getISBN()
              << ", Genero: " << actual->getGenero() << ", Precio: $" << actual->getPrecio()
              << ", Calificacion: " << actual->getCalificacion() << "/5\n";
         actual = actual->getSiguiente();

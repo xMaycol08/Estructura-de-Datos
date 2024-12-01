@@ -10,6 +10,8 @@
 #include <iostream>
 #include <limits>
 #include <sstream>
+#include <hpdf.h>
+#include "GenerarPDF.h"
 using namespace std;
 
 // Limpiar consola según el sistema operativo
@@ -22,6 +24,7 @@ void limpiarConsola() {
 }
 
 int main() {
+
     ListaCircularDoble lista;
     int opcion;
 
@@ -32,7 +35,8 @@ int main() {
         cout << "2. Buscar libro por ISBN\n";
         cout << "3. Eliminar libro por ISBN\n";
         cout << "4. Mostrar todos los libros\n";
-        cout << "5. Salir\n";
+        cout << "5. Generar PDF\n";
+        cout << "6. Salir\n";
         cout << "Seleccione una opcion: ";
          // Validar que la opción ingresada sea un número entero
         while (!ingresarOpcionMenu(opcion)) {
@@ -155,15 +159,20 @@ int main() {
                 break;
 
             case 5:
+                generarPDF(lista);
+                break;
+
+            case 6:
                 cout << "Saliendo del programa...\n";
                 break;
+
 
             default:
                 cout << "Opcion no valida. Intente nuevamente.\n";
         }
 
         system("pause");
-    } while (opcion != 5);
+    } while (opcion != 6);
 
     return 0;
 }
