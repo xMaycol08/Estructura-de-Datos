@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1733015345 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\listacirculardoble.cpp
+1733076939 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\listacirculardoble.cpp
 	"ListaCircularDoble.h"
 	<iostream>
 
-1733014493 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\listacirculardoble.h
+1733076939 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\listacirculardoble.h
 	"NodoLibro.h"
 	<string>
 
@@ -13,13 +13,14 @@
 1733014493 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\nodolibro.cpp
 	"NodoLibro.h"
 
-1733066441 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\main.cpp
+1733076704 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\main.cpp
 	"ListaCircularDoble.h"
 	"Validaciones.h"
 	<iostream>
 	<limits>
 	<sstream>
 	<hpdf.h>
+	"GenerarPDF.h"
 
 1733020394 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\validaciones.cpp
 	"Validaciones.h"
@@ -110,4 +111,35 @@
 1695066421 c:\tools\vcpkg\packages\libharu_x64-windows\include\hpdf_pdfa.h
 	"hpdf_doc.h"
 	"hpdf_objects.h"
+
+1733067297 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\wizardclaves.cpp
+	"WizardClaves.h"
+	<iostream>
+	<sstream>
+	<iomanip>
+	<ctime>
+	<random>
+
+1733067297 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\wizardclaves.h
+	<string>
+	<vector>
+
+1733072835 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\mostrarmenuconcursor.cpp
+	"MostrarMenuConCursor.h"
+	<iostream>
+
+1733072835 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\mostrarmenuconcursor.h
+	<vector>
+	<string>
+
+1733076783 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\generarpdf.h
+	"ListaCircularDoble.h"
+
+1733076939 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyectos\proyecto_parcial1\generarpdf.cpp
+	"GenerarPDF.h"
+	<iostream>
+	<hpdf.h>
+	<sstream>
+	<vector>
+	<cstdlib>
 
