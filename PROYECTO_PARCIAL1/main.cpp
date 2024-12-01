@@ -6,8 +6,10 @@
  * University: Universidad de las Fuerzas Armadas - ESPE
  ***********************************************************************/
 #include "ListaCircularDoble.h"
+#include "Validaciones.h"
 #include <iostream>
 #include <limits>
+#include <sstream>
 using namespace std;
 
 // Limpiar consola según el sistema operativo
@@ -19,7 +21,6 @@ void limpiarConsola() {
 #endif
 }
 
-// Menú principal
 int main() {
     ListaCircularDoble lista;
     int opcion;
@@ -33,7 +34,10 @@ int main() {
         cout << "4. Mostrar todos los libros\n";
         cout << "5. Salir\n";
         cout << "Seleccione una opcion: ";
-        cin >> opcion;
+         // Validar que la opción ingresada sea un número entero
+        while (!ingresarOpcionMenu(opcion)) {
+            cout << "Error: Ingrese solo un numero entre el 1 y el 5: ";
+        }
 
         switch (opcion) {
             case 1: {
@@ -45,29 +49,64 @@ int main() {
 
                 cout << "Ingrese el titulo del libro: ";
                 getline(cin, titulo);
+                while (!validarTexto(titulo)) {
+                    cout << "Error: El titulo solo debe contener letras y espacios. Intente nuevamente: ";
+                    getline(cin, titulo);
+                }
 
                 cout << "Ingrese el autor del libro: ";
                 getline(cin, autor);
+                while (!validarTexto(autor)) {
+                    cout << "Error: El autor solo debe contener letras y espacios. Intente nuevamente: ";
+                    getline(cin, autor);
+                }
 
                 cout << "Ingrese el ano de publicacion: ";
-                cin >> anio;
+                while (true) {
+                    if (ingresarNumero(anio) && validarAnioPublicacion(anio)) {
+                        break; // Si la entrada es válida, salimos del bucle
+                    }
+                    cout << "Error: El ano debe ser un numero entre 1800 y 2024. Intente nuevamente: ";
+                }
 
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Limpiar buffer
 
                 cout << "Ingrese el ISBN (unico): ";
                 getline(cin, isbn);
+                while (!validarISBN(isbn)) {
+                    cout << "Error: El ISBN solo debe contener numeros y guiones. Intente nuevamente: ";
+                    getline(cin, isbn);
+                }
 
                 cout << "Ingrese el genero del libro: ";
                 getline(cin, genero);
+                while (!validarTexto(genero)) {
+                    cout << "Error: El genero solo debe contener letras y espacios. Intente nuevamente: ";
+                    getline(cin, genero);
+                }
 
                 cout << "Ingrese la sinopsis del libro: ";
                 getline(cin, sinopsis);
+                while (!validarTexto(sinopsis)) {
+                    cout << "Error: La sinopsis solo debe contener letras y espacios. Intente nuevamente: ";
+                    getline(cin, sinopsis);
+                }
 
                 cout << "Ingrese el precio del libro: ";
-                cin >> precio;
+                while (true) {
+                    if (ingresarNumero(precio) && validarPrecio(precio)) {
+                        break; // Si la entrada es válida, salimos del bucle
+                    }
+                    cout << "Error: El precio debe ser un numero mayor a 0. Intente nuevamente: ";
+                }
 
-                cout << "Ingrese la calificación del libro (0 a 5): ";
-                cin >> calificacion;
+                cout << "Ingrese la calificacion del libro (0 a 5): ";
+                while (true) {
+                    if (ingresarNumero(calificacion) && validarCalificacion(calificacion)) {
+                        break; // Si la entrada es válida, salimos del bucle
+                    }
+                    cout << "Error: La calificacion debe ser un numero entre 0 y 5. Intente nuevamente: ";
+                }
 
                 lista.insertar(titulo, autor, anio, isbn, genero, sinopsis, precio, calificacion);
                 break;
@@ -123,7 +162,7 @@ int main() {
                 cout << "Opcion no valida. Intente nuevamente.\n";
         }
 
-       system("pause");
+        system("pause");
     } while (opcion != 5);
 
     return 0;
