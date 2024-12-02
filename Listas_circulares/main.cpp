@@ -8,7 +8,16 @@
 #include "ListasCirculares.h"
 #include "Validaciones.h"
 #include <iostream>
+#include <string>
 using namespace std;
+
+void limpiarConsola() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
 
 int main() {
     ListaCircular lista;
@@ -18,6 +27,7 @@ int main() {
     int opcion;
 
     do {
+        limpiarConsola();
         cout << "\n*** Menu de opciones ***\n";
         cout << "1. Insertar persona\n";
         cout << "2. Buscar persona\n";
@@ -30,41 +40,63 @@ int main() {
 
         switch (opcion) {
             case 1: {
-                // Ingreso de c閐ula
-                cedulaNumerica = ingresarCedulaNumerica();
-                if (!validarCedulaReal(cedulaNumerica)) {
-                    imprimirResultadoCedula(false);
-                    break;
-                }
-                imprimirResultadoCedula(true);
+                // Validaci贸n de c茅dula en bucle
+                bool cedulaValida = false;
+                do {
+                    cout << "Ingrese su cedula: ";
+                    string cedulaInput;
+                    cin >> cedulaInput;
 
-                // Ingreso de nombre
-                cout << "Ingrese nombre: ";
-                cin >> nombre;
-                if (!validarSoloLetras(nombre)) {
-                    cout << "Error: El nombre debe contener solo letras.\n";
-                    break;
-                }
+                    // Validar que sea num茅rica y tenga 10 d铆gitos
+                    if (cedulaInput.length() == 10 && validarCedula(cedulaInput)) {
+                        cedulaNumerica = stol(cedulaInput); // Convertir a n煤mero
+                        if (validarCedulaReal(cedulaNumerica)) {
+                            imprimirResultadoCedula(true);
+                            cedulaValida = true;
+                        } else {
+                            imprimirResultadoCedula(false);
+                        }
+                    } else {
+                        cout << "Cedula invalida. Asegurese de que tenga 10 digitos numericos.\n";
+                    }
+                } while (!cedulaValida);
 
-                // Ingreso de apellido
-                cout << "Ingrese apellido: ";
-                cin >> apellido;
-                if (!validarSoloLetras(apellido)) {
-                    cout << "Error: El apellido debe contener solo letras.\n";
-                    break;
-                }
+                // Validaci贸n de nombre en bucle
+                bool nombreValido = false;
+                do {
+                    cout << "Ingrese nombre: ";
+                    cin >> nombre;
+                    if (validarSoloLetras(nombre)) {
+                        nombreValido = true;
+                    } else {
+                        cout << "Error: El nombre debe contener solo letras. Intente nuevamente.\n";
+                    }
+                } while (!nombreValido);
 
-                // Inserci髇 en la lista
+                // Validaci贸n de apellido en bucle
+                bool apellidoValido = false;
+                do {
+                    cout << "Ingrese apellido: ";
+                    cin >> apellido;
+                    if (validarSoloLetras(apellido)) {
+                        apellidoValido = true;
+                    } else {
+                        cout << "Error: El apellido debe contener solo letras. Intente nuevamente.\n";
+                    }
+                } while (!apellidoValido);
+
+                // Inserci贸n en la lista
                 lista.insertar(to_string(cedulaNumerica), nombre, apellido);
+                cout << "Persona insertada exitosamente.\n";
                 break;
             }
 
             case 2:
-                cout << "Ingrese cedula a buscar: ";
+                cout << "Ingrese c茅dula a buscar: ";
                 cin >> cedulaNumerica;
                 if (lista.buscar(to_string(cedulaNumerica)) != nullptr) {
                     Nodo* encontrado = lista.buscar(to_string(cedulaNumerica));
-                    cout << "Persona encontrada: <Cedula: " << encontrado->getCedula()
+                    cout << "Persona encontrada: <C茅dula: " << encontrado->getCedula()
                          << ", Nombre: " << encontrado->getNombre()
                          << ", Apellido: " << encontrado->getApellido() << ">\n";
                 } else {
@@ -75,10 +107,15 @@ int main() {
             case 3:
                 cout << "Ingrese cedula a eliminar: ";
                 cin >> cedulaNumerica;
-                lista.eliminar(to_string(cedulaNumerica));
+                if (lista.eliminar(to_string(cedulaNumerica))) {
+                    cout << "Persona eliminada correctamente.\n";
+                } else {
+                    cout << "Error: Persona no encontrada.\n";
+                }
                 break;
 
             case 4:
+                cout << "\nLista de personas:\n";
                 lista.mostrar();
                 break;
 
@@ -95,9 +132,13 @@ int main() {
                 break;
 
             default:
-                cout << "Opcion no valida. Intente nuevamente.\n";
+                cout << "Opci贸n no v谩lida. Por favor, seleccione una opci贸n del men煤.\n";
         }
-        system("pause");
+
+        if (opcion != 6) {
+            cout << "\nPresione cualquier tecla para regresar al menu...\n";
+            system("pause");
+        }
     } while (opcion != 6);
 
     return 0;

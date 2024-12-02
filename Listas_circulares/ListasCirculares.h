@@ -16,5 +16,3 @@ public:
     void eliminarCaracter(string, char);
     bool validarCedulaUnica(string);
 };
-
-

@@ -20,4 +20,3 @@ public:
     Nodo* getSiguiente();
     void setSiguiente(Nodo*);
 };
-
