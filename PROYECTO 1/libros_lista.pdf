@@ -51,7 +51,7 @@ ET
 BT
 /F1 12 Tf
 50 700 Td
-(T\355tulo: pedro) Tj
+(T\355tulo: ma) Tj
 ET
 BT
 /F1 12 Tf
@@ -61,27 +61,27 @@ ET
 BT
 /F1 12 Tf
 50 660 Td
-(ISBN: 18) Tj
+(ISBN: 189) Tj
 ET
 BT
 /F1 12 Tf
 50 640 Td
-(G\351nero: juan) Tj
+(G\351nero: me) Tj
 ET
 BT
 /F1 12 Tf
 50 620 Td
-(A\361o de Lanzamiento: 08\05720\0572004) Tj
+(A\361o de Lanzamiento: 08\05702\0572003) Tj
 ET
 BT
 /F1 12 Tf
 50 600 Td
-(Precio: $5.000000) Tj
+(Precio: $6.00) Tj
 ET
 BT
 /F1 12 Tf
 50 580 Td
-(Calificaci\363n: 6.000000) Tj
+(Calificaci\363n: 4.00) Tj
 ET
 BT
 /F1 10 Tf
@@ -91,7 +91,7 @@ ET
 BT
 /F1 12 Tf
 50 530 Td
-(T\355tulo: ma) Tj
+(T\355tulo: asd) Tj
 ET
 BT
 /F1 12 Tf
@@ -101,78 +101,38 @@ ET
 BT
 /F1 12 Tf
 50 490 Td
-(ISBN: 189) Tj
+(ISBN: 1963) Tj
 ET
 BT
 /F1 12 Tf
 50 470 Td
-(G\351nero: me) Tj
+(G\351nero: sc) Tj
 ET
 BT
 /F1 12 Tf
 50 450 Td
-(A\361o de Lanzamiento: 08\05702\0572003) Tj
+(A\361o de Lanzamiento: 08\05708\0572005) Tj
 ET
 BT
 /F1 12 Tf
 50 430 Td
-(Precio: $6.000000) Tj
+(Precio: $6.00) Tj
 ET
 BT
 /F1 12 Tf
 50 410 Td
-(Calificaci\363n: 4.000000) Tj
+(Calificaci\363n: 4.00) Tj
 ET
 BT
 /F1 10 Tf
 50 380 Td
 (--------------------------------------------) Tj
 ET
-BT
-/F1 12 Tf
-50 360 Td
-(T\355tulo: asd) Tj
-ET
-BT
-/F1 12 Tf
-50 340 Td
-(Autor: xavier gomez) Tj
-ET
-BT
-/F1 12 Tf
-50 320 Td
-(ISBN: 1963) Tj
-ET
-BT
-/F1 12 Tf
-50 300 Td
-(G\351nero: sc) Tj
-ET
-BT
-/F1 12 Tf
-50 280 Td
-(A\361o de Lanzamiento: 08\05708\0572005) Tj
-ET
-BT
-/F1 12 Tf
-50 260 Td
-(Precio: $6.000000) Tj
-ET
-BT
-/F1 12 Tf
-50 240 Td
-(Calificaci\363n: 4.000000) Tj
-ET
-BT
-/F1 10 Tf
-50 210 Td
-(--------------------------------------------) Tj
-ET
 
 endstream
 endobj
 6 0 obj
-1442
+987
 endobj
 7 0 obj
 <<
@@ -190,8 +150,8 @@ xref
 0000000123 00000 n
 0000000184 00000 n
 0000000370 00000 n
-0000001866 00000 n
-0000001886 00000 n
+0000001411 00000 n
+0000001430 00000 n
 trailer
 <<
 /Root 1 0 R
@@ -199,5 +159,5 @@ trailer
 /Size 8
 >>
 startxref
-1984
+1528
 %%EOF

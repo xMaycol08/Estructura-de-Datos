@@ -37,6 +37,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="GenerarPDFAutores.cpp" />
+		<Unit filename="GenerarPDFAutores.h" />
+		<Unit filename="GenerarPDFLibros.cpp" />
+		<Unit filename="GenerarPDFLibros.h" />
 		<Unit filename="ListaAutores.cpp" />
 		<Unit filename="ListaAutores.h" />
 		<Unit filename="ListaLibros.cpp" />

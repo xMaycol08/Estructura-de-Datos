@@ -1,14 +1,5 @@
 [
     {
-        "anioLanzamiento": "08/20/2004",
-        "autor": "xavier gomez",
-        "calificacion": 6.0,
-        "genero": "juan",
-        "isbn": "18",
-        "precio": 5.0,
-        "titulo": "pedro"
-    },
-    {
         "anioLanzamiento": "08/02/2003",
         "autor": "xavier gomez",
         "calificacion": 4.0,

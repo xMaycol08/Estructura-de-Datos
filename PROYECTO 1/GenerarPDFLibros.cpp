@@ -1,6 +1,8 @@
 #include "GenerarPDFLibros.h"
 #include <iostream>
 #include <hpdf.h>
+#include <iomanip>
+#include <sstream>
 #include <cstdlib> // Para abrir el PDF automáticamente
 
 GenerarPDFLibros::GenerarPDFLibros(ListaLibros& listaLibros) : listaLibros(listaLibros) {}
@@ -48,13 +50,21 @@ void GenerarPDFLibros::generarPDF(const std::string& nombreArchivo) {
     // Escribir los libros en el PDF
     do {
         // Separar cada campo en una línea diferente
-        std::string tituloTexto = "Título: " + actual->getTitulo();
-        std::string autorTexto = "Autor: " + actual->getAutor();
-        std::string isbnTexto = "ISBN: " + actual->getIsbn();
-        std::string generoTexto = "Género: " + actual->getGenero();
-        std::string anioTexto = "Año de Lanzamiento: " + actual->getAnioLanzamiento();
-        std::string precioTexto = "Precio: $" + std::to_string(actual->getPrecio());
-        std::string calificacionTexto = "Calificación: " + std::to_string(actual->getCalificacion());
+std::string tituloTexto = "Título: " + actual->getTitulo();
+std::string autorTexto = "Autor: " + actual->getAutor();
+std::string isbnTexto = "ISBN: " + actual->getIsbn();
+std::string generoTexto = "Género: " + actual->getGenero();
+std::string anioTexto = "Año de Lanzamiento: " + actual->getAnioLanzamiento();
+
+// Formatear precio con dos decimales
+std::ostringstream precioStream;
+precioStream << std::fixed << std::setprecision(2) << actual->getPrecio();
+std::string precioTexto = "Precio: $" + precioStream.str();
+
+// Formatear calificación con dos decimales
+std::ostringstream calificacionStream;
+calificacionStream << std::fixed << std::setprecision(2) << actual->getCalificacion();
+std::string calificacionTexto = "Calificación: " + calificacionStream.str();
 
         // Escribir el título
         HPDF_Page_BeginText(page);

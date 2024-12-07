@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
+1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
 	"ListaAutores.h"
 	"Validaciones.h"
 	<iostream>
 	"json.hpp"
 
-1733546197 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.h
+1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.h
 	"NodoAutores.h"
 	<string>
 	<fstream>
@@ -214,27 +214,28 @@
 1733554246 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
 	<string>
 
-1733548400 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
+1733579471 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
 	"ListaLibros.h"
 	<iostream>
 	<fstream>
 	<sstream>
 	"json.hpp"
+	<iomanip>
 
-1733542295 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
+1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
 	"NodoLibros.h"
 	"ListaAutores.h"
 	<string>
 	<fstream>
 	"json.hpp"
 
-1733533586 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.h
+1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.h
 	<string>
 
 1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.cpp
 	"NodoAutores.h"
 
-1733555346 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
+1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
 	"NodoLibros.h"
 	<iostream>
 
@@ -244,7 +245,7 @@
 	<iostream>
 	<limits>
 
-1733555082 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
+1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
 	"ListaAutores.h"
 	"ListaLibros.h"
 	"Validaciones.h"
@@ -255,10 +256,12 @@
 	<limits>
 	<hpdf.h>
 
-1733549680 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdflibros.cpp
+1733579754 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdflibros.cpp
 	"GenerarPDFLibros.h"
 	<iostream>
 	<hpdf.h>
+	<iomanip>
+	<sstream>
 	<cstdlib>
 
 1733542276 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdflibros.h

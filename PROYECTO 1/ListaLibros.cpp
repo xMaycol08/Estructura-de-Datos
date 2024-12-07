@@ -3,6 +3,7 @@
 #include <fstream>
 #include <sstream>
 #include "json.hpp"
+#include <iomanip>
 using json = nlohmann::json;
 
 ListaLibros::ListaLibros() : cabeza(nullptr) {}
@@ -49,10 +50,16 @@ NodoLibros* ListaLibros::buscar(string isbn) {
 
     NodoLibros* actual = cabeza;
     do {
-        // Depuración: Mostrar qué ISBN se compara
-        //cout << "Comparando ISBN en nodo: " << actual->getIsbn() << " con " << isbn << "\n";
         if (actual->getIsbn() == isbn) {
-            cout << "Libro encontrado: " << actual->getTitulo() << "\n";
+            // Imprimir toda la información del libro
+            cout << "Libro encontrado:\n";
+            cout << "Título: " << actual->getTitulo() << "\n";
+            cout << "Autor: " << actual->getAutor() << "\n";
+            cout << "ISBN: " << actual->getIsbn() << "\n";
+            cout << "Género: " << actual->getGenero() << "\n";
+            cout << "Año de lanzamiento: " << actual->getAnioLanzamiento() << "\n";
+            cout << "Precio: $" << std::fixed << std::setprecision(2) << actual->getPrecio() << "\n";
+            cout << "Calificación: " << std::fixed << std::setprecision(2) << actual->getCalificacion() << "\n";
             return actual;
         }
         actual = actual->getSiguiente();
@@ -110,12 +117,12 @@ void ListaLibros::mostrar() {
     cout << "Mostrando libros:\n";
     do {
         cout << "Título: " << actual->getTitulo()
-             << ", Autor: " << actual->getAutor()
-             << ", ISBN: " << actual->getIsbn()
-             << ", Género: " << actual->getGenero()
-             << ", Año de Lanzamiento: " << actual->getAnioLanzamiento()
-             << ", Precio: " << actual->getPrecio()
-             << ", Calificación: " << actual->getCalificacion() << "\n";
+             << " Autor: " << actual->getAutor()
+             << " ISBN: " << actual->getIsbn()
+             << " Género: " << actual->getGenero()
+             << " Año de Lanzamiento: " << actual->getAnioLanzamiento()
+             << " Precio: $" << std::fixed << std::setprecision(2) << actual->getPrecio()
+             << " Calificación: " << std::fixed << std::setprecision(2) << actual->getCalificacion() << "\n";
         actual = actual->getSiguiente();
     } while (actual != cabeza);
 }
