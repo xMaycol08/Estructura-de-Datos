@@ -24,7 +24,7 @@ bool validarCedula(const string& cedula) {
 }
 
 bool validarTexto(const string& texto) {
-    return regex_match(texto, regex("^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$"));
+    return regex_match(texto, regex("^[a-zA-Zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ]+$"));
 }
 
 bool validarFecha(const string& fecha) {
@@ -51,45 +51,49 @@ bool validarCalificacion(double calificacion) {
     return calificacion >= 0.0 && calificacion <= 10.0;
 }
 
-// Función para ingresar números enteros (por ejemplo, año)
+bool validarISBN(const std::string& isbn) {
+    return std::regex_match(isbn, std::regex("[0-9-]+"));
+}
+
+// Funciï¿½n para ingresar nï¿½meros enteros (por ejemplo, aï¿½o)
 bool ingresarNumero(int& numero) {
     while (true) {
         cin >> numero;
-        if (cin.fail()) { // Si la entrada no es un número
+        if (cin.fail()) { // Si la entrada no es un nï¿½mero
             cin.clear(); // Limpiar el error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no válidos
-            cout << "Error: Ingresa un número válido.\n";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no vï¿½lidos
+            cout << "Error: Ingresa un numero valido.\n";
         } else {
-            return true; // Entrada válida
+            return true; // Entrada vï¿½lida
         }
     }
 }
 
-// Función para ingresar números decimales (por ejemplo, precio o calificación)
+// Funciï¿½n para ingresar nï¿½meros decimales (por ejemplo, precio o calificaciï¿½n)
 bool ingresarNumero(double& numero) {
     while (true) {
         cin >> numero;
-        if (cin.fail()) { // Si la entrada no es un número
+        if (cin.fail()) { // Si la entrada no es un nï¿½mero
             cin.clear(); // Limpiar el error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no válidos
-            cout << "Error: Ingresa un número válido.\n";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no vï¿½lidos
+            cout << "Error: Ingresa un numero valido.\n";
         } else {
-            return true; // Entrada válida
+            return true; // Entrada vï¿½lida
         }
     }
 }
 
-// Función para ingresar y validar la opción seleccionada en el menú
+// Funciï¿½n para ingresar y validar la opciï¿½n seleccionada en el menï¿½
 bool ingresarOpcionMenu(int& opcion) {
     while (true) {
         cin >> opcion;
-        if (cin.fail()) { // Si la entrada no es un número
+        if (cin.fail()) { // Si la entrada no es un nï¿½mero
             cin.clear(); // Limpiar el error
-            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no válidos
-            cout << "Error: Ingresa una opción válida.\n";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar caracteres no vï¿½lidos
+            cout << "Error: Ingresa una opcion valida.\n";
              cout << "Vuelve a intentarlo por favor:";
         } else {
-            return true; // Entrada válida
+            return true; // Entrada vï¿½lida
         }
     }
 }

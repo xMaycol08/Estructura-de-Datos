@@ -50,7 +50,7 @@ NodoLibros* ListaLibros::buscar(string isbn) {
     NodoLibros* actual = cabeza;
     do {
         // Depuración: Mostrar qué ISBN se compara
-        cout << "Comparando ISBN en nodo: " << actual->getIsbn() << " con " << isbn << "\n";
+        //cout << "Comparando ISBN en nodo: " << actual->getIsbn() << " con " << isbn << "\n";
         if (actual->getIsbn() == isbn) {
             cout << "Libro encontrado: " << actual->getTitulo() << "\n";
             return actual;
@@ -146,7 +146,7 @@ void ListaLibros::guardarEnArchivoJSON() {
     if (archivo.is_open()) {
         archivo << jLibros.dump(4);
         archivo.close();
-        cout << "Datos guardados correctamente en 'libros.json'.\n";
+    //    cout << "Datos guardados correctamente en 'libros.json'.\n";
     } else {
         cout << "Error: No se pudo abrir el archivo para guardar datos.\n";
     }

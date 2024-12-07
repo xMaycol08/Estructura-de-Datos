@@ -10,8 +10,9 @@ bool validarFlotante(const string& numero);
 bool validarOpcionMenu(int opcion, int min, int max);
 bool validarPrecio(double precio);
 bool validarCalificacion(double calificacion);
+bool validarISBN(const std::string& isbn);
 
-// Funciones para ingresar números de forma segura
-bool ingresarNumero(int& numero);         // Para enteros (por ejemplo, año)
-bool ingresarNumero(double& numero);      // Para decimales (por ejemplo, precio o calificación)
-bool ingresarOpcionMenu(int& opcion);     // Función para validar la opción seleccionada en el menú
+// Funciones para ingresar nï¿½meros de forma segura
+bool ingresarNumero(int& numero);         // Para enteros (por ejemplo, aï¿½o)
+bool ingresarNumero(double& numero);      // Para decimales (por ejemplo, precio o calificaciï¿½n)
+bool ingresarOpcionMenu(int& opcion);     // Funciï¿½n para validar la opciï¿½n seleccionada en el menï¿½

@@ -1,12 +1,14 @@
 #include "ListaAutores.h"
 #include "ListaLibros.h"
 #include "Validaciones.h"
+#include "GenerarPDFLibros.h"
+#include "GenerarPDFAutores.h"
 #include <iostream>
 #include <cstdlib> // Para system()
 #include <limits>
 #include <hpdf.h>
-#include "GenerarPDFLibros.h"
-#include "GenerarPDFAutores.h"
+
+
 
 // Men� para manejar las opciones de "Autores"
 void menuAutores(ListaAutores& listaAutores) {
@@ -14,72 +16,110 @@ void menuAutores(ListaAutores& listaAutores) {
     do {
         system("pause");
         system("cls");
-        // Imprimir el men� de autores
-        cout << "\n--- Men� de Autores ---\n";
-        cout << "1. Insertar Autor\n";
-        cout << "2. Buscar Autor\n";
-        cout << "3. Eliminar Autor\n";
-        cout << "4. Mostrar Autores\n";
-        cout << "5. Generar PDF Autores\n";
-        cout << "6. Volver al men� principal\n";
-        cout << "Ingrese una opci�n: ";
+        cout << "*****************************************************************************";
+        cout << "\n\t\t\t\t MENU AUTORES \t\t\t\t\n";
+         cout << "*****************************************************************************\n";
+        cout << "\t1. Insertar Autor\n";
+        cout << "\t2. Buscar Autor\n";
+        cout << "\t3. Eliminar Autor\n";
+        cout << "\t4. Mostrar Autores\n";
+        cout << "\t5. Generar PDF Autores\n";
+        cout << "\t6. Volver al menu principal\n";
+        cout << "\tIngrese una opcion: ";
         ingresarOpcionMenu(opcion);
 
         if (!validarOpcionMenu(opcion, 1, 5)) {
-            cout << "Opci�n no v�lida. Intente de nuevo.\n";
+            cout << "Opcion no valida. Intente de nuevo.\n";
             continue;
         }
 
         switch (opcion) {
-        case 1: {
-            string cedula, nombre, apellido, fechaPublicacion;
-            cout << "Ingrese c�dula: ";
-            cin >> cedula;
-            cout << "Ingrese nombre: ";
-            cin >> nombre;
-            cout << "Ingrese apellido: ";
-            cin >> apellido;
-            cout << "Ingrese fecha de publicaci�n (MM/dd/yyyy): ";
-            cin >> fechaPublicacion;
 
-            if (!validarCedula(cedula) || !validarTexto(nombre) || !validarTexto(apellido) || !validarFecha(fechaPublicacion)) {
-                cout << "Error: Datos inv�lidos.\n";
-                break;
-            }
-            listaAutores.insertar(cedula, nombre, apellido, fechaPublicacion);
-            break;
+       case 1: {
+           string cedula, nombre, apellido, fechaPublicacion;
+           while (true) {
+                cout << "Ingrese la cedula: ";
+                cin >> cedula;
+                if (validarCedula(cedula)) break;
+                cout << "Error: La cedula ingresada no es valida\n";
+                }
+          while (true) {
+        cout << "Ingrese nombre: ";
+        cin >> nombre;
+        if (validarTexto(nombre)) break;
+        cout << "Error: El nombre debe contener solo letras y espacios.\n";
         }
-        case 2: {
-            string cedula;
-            cout << "Ingrese c�dula del autor: ";
-            cin >> cedula;
-            NodoAutores* autor = listaAutores.buscar(cedula);
-            if (autor) {
-                cout << "Autor encontrado: " << autor->getNombre() << " " << autor->getApellido() << "\n";
-            } else {
-                cout << "Autor no encontrado.\n";
-            }
-            break;
+        while (true) {
+        cout << "Ingrese apellido: ";
+        cin >> apellido;
+        if (validarTexto(apellido)) break;
+        cout << "Error: El apellido debe contener solo letras y espacios.\n";
         }
+
+        while (true) {
+        cout << "Ingrese fecha de publicación (MM/dd/yyyy): ";
+        cin >> fechaPublicacion;
+        if (validarFecha(fechaPublicacion)) break;
+        cout << "Error: La fecha debe tener el formato MM/dd/yyyy.\n";
+        }
+
+    listaAutores.insertar(cedula, nombre, apellido, fechaPublicacion);
+
+    break;
+}
+
+       case 2: {
+    string cedula;
+
+    while (true) {
+        cout << "Ingrese cedula del autor: ";
+        cin >> cedula;
+        if (validarCedula(cedula)) break;
+        cout << "Error: La cedula ingresada no es válida\n";}
+
+    NodoAutores* autor = listaAutores.buscar(cedula);
+    if (autor) {
+
+        cout << "Autor encontrado:\n";
+        cout << "Nombre: " << autor->getNombre() << "\n";
+        cout << "Apellido: " << autor->getApellido() << "\n";
+    } else {
+
+        cout << "Autor no encontrado con la cedula proporcionada.\n";
+    }
+    break;
+}
+
         case 3: {
             string cedula;
-            cout << "Ingrese c�dula del autor a eliminar: ";
-            cin >> cedula;
-            listaAutores.eliminar(cedula);
-            break;
+    while (true) {
+        cout << "Ingrese cedula del autor a eliminar: ";
+        cin >> cedula;
+        if (validarCedula(cedula)) break;
+        cout << "Error: La cedula ingresada no es valida.\n";
+    }
+
+    bool eliminado = listaAutores.eliminar(cedula);
+    if (eliminado) {
+        cout << "Autor con cédula " << cedula << " eliminado exitosamente.\n";
+    } else {
+        cout << "Error: No se encontró un autor con la cédula proporcionada.\n";
+    }
+    break;
         }
+
+
         case 4:
             listaAutores.mostrar();
             break;
         case 5:
-            {
-                        GenerarPDFAutores generador(listaAutores);
-    generador.generarPDF("autores_lista.pdf");
+           {
+            GenerarPDFAutores generador(listaAutores);
+            generador.generarPDF("autores_lista.pdf");
             }
-
             break;
         case 6:
-            cout << "Volviendo al men� principal...\n";
+            cout << "Volviendo al menu principal...\n";
             system("pause");
             break;
         }
@@ -87,64 +127,100 @@ void menuAutores(ListaAutores& listaAutores) {
     } while (opcion != 6);
 }
 
-// Men� para manejar las opciones de "Libros"
+// MenU para manejar las opciones de "Libros"
 void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
     int opcion;
     do {
         system("pause");
         system("cls");
-        // Imprimir el men� de libros
-        cout << "\n--- Men� de Libros ---\n";
-        cout << "1. Insertar Libro\n";
-        cout << "2. Buscar Libro\n";
-        cout << "3. Eliminar Libro\n";
-        cout << "4. Mostrar Libros\n";
-        cout << "5. Generar PDF de Libros\n";
-        cout << "6. Volver al men� principal\n";
-        cout << "Ingrese una opci�n: ";
+       cout << "*****************************************************************************";
+        cout << "\n\t\t\t\t MENU LIBROS \t\t\t\t\n";
+         cout << "*****************************************************************************\n";
+        cout << "\t1. Insertar Libro\n";
+        cout << "\t2. Buscar Libro\n";
+        cout << "\t3. Eliminar Libro\n";
+        cout << "\t4. Mostrar Libros\n";
+        cout << "\t5. Generar PDF de Libros\n";
+        cout << "\t6. Volver al menu principal\n";
+        cout << "\tIngrese una opcion: ";
         ingresarOpcionMenu(opcion);
 
         if (!validarOpcionMenu(opcion, 1, 5)) {
-            cout << "Opci�n no v�lida. Intente de nuevo.\n";
+            cout << "Opcion no valida. Intente de nuevo.\n";
             continue;
         }
 
         switch (opcion) {
+
         case 1: {
-            string titulo, isbn, genero, anioLanzamiento;
-            double precio, calificacion;
 
-            string autor = listaLibros.seleccionarAutor(listaAutores);
-            if (autor.empty()) break;
+    string titulo, isbn, genero, anioLanzamiento;
+    double precio, calificacion;
+    string autor = listaLibros.seleccionarAutor(listaAutores);
+    if (autor.empty()) break;
 
-            cout << "Ingrese t�tulo: ";
-            cin >> titulo;
-            cout << "Ingrese ISBN: ";
-            cin >> isbn;
-            cout << "Ingrese g�nero: ";
-            cin >> genero;
-            cout << "Ingrese a�o de lanzamiento: ";
-            cin>> anioLanzamiento;
-            cout << "Ingrese precio: ";
-            ingresarNumero(precio);
-            if (!validarPrecio(precio)) {
-                cout << "Error: El precio debe ser positivo.\n";
-                break;
-            }
-            cout << "Ingrese calificaci�n (0-10): ";
-            ingresarNumero(calificacion);
-            if (!validarCalificacion(calificacion)) {
-                cout << "Error: La calificaci�n debe ser entre 0 y 10.\n";
-                break;
-            }
+    do {
+        cout << "Ingrese titulo: ";
+        cin.ignore();
+        getline(cin, titulo);
+        if (!validarTexto(titulo)) {
+            cout << "Error: El titulo solo puede contener letras y espacios.\n";
+        }
+    } while (!validarTexto(titulo));
 
-            listaLibros.insertar(titulo, autor, isbn, genero, anioLanzamiento, precio, calificacion);
-            break;
+    do {
+        cout << "Ingrese ISBN: ";
+        getline(cin, isbn);
+        if (!validarISBN(isbn)) {
+            cout << "Error: El ISBN solo puede contener digitos y guiones.\n";
+        }
+    } while (!validarISBN(isbn));
+
+    do {
+        cout << "Ingrese genero: ";
+        getline(cin, genero);
+        if (!validarTexto(genero)) {
+            cout << "Error: El genero solo puede contener letras y espacios.\n";
+        }
+    } while (!validarTexto(genero));
+
+    do {
+        cout << "Ingrese fecha de lanzamiento (MM/DD/AAAA): ";
+        getline(cin, anioLanzamiento);
+        if (!validarFecha(anioLanzamiento)) {
+            cout << "Error: Fecha invalida. Usa el formato MM/DD/AAAA.\n";
+        }
+    } while (!validarFecha(anioLanzamiento));
+
+    do {
+        cout << "Ingrese precio: ";
+        if (!ingresarNumero(precio) || !validarPrecio(precio)) {
+            cout << "Error: El precio debe ser un numero positivo.\n";
+        }
+    } while (!validarPrecio(precio));
+
+    do {
+        cout << "Ingrese calificación (0-10): ";
+        if (!ingresarNumero(calificacion) || !validarCalificacion(calificacion)) {
+            cout << "Error: La calificación debe ser entre 0 y 10.\n";
+        }
+    } while (!validarCalificacion(calificacion));
+
+    listaLibros.insertar(titulo, autor, isbn, genero, anioLanzamiento, precio, calificacion);
+    cout << "Libro ingresado exitosamente.\n";
+    break;
+
         }
         case 2: {
             string isbn;
-            cout << "Ingrese ISBN del libro: ";
-            cin >> isbn;
+            do {
+        cout << "Ingrese ISBN del libro: ";
+        cin >> isbn;
+        if (!validarISBN(isbn)) {
+            cout << "Error: El ISBN debe contener solo digitos y guiones.\n";
+        }
+    } while (!validarISBN(isbn));
+
             NodoLibros* libro = listaLibros.buscar(isbn);
             if (libro) {
                 cout << "Libro encontrado: " << libro->getTitulo() << " por " << libro->getAutor() << "\n";
@@ -155,23 +231,32 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
         }
         case 3: {
             string isbn;
-            cout << "Ingrese ISBN del libro a eliminar: ";
-            cin >> isbn;
-            listaLibros.eliminar(isbn);
+            do {
+                    cout << "Ingrese ISBN del libro: ";
+                    cin >> isbn;
+                    if (!validarISBN(isbn)) {
+                            cout << "Error: El ISBN debe contener solo digitos y guiones.\n";}
+              } while (!validarISBN(isbn));
+
+           if (listaLibros.eliminar(isbn)) {
+             cout << "El libro con ISBN " << isbn << " ha sido eliminado exitosamente.\n";
+             } else {
+             cout << "El libro con ISBN " << isbn << " no se encontró en la lista.\n";
+            }
             break;
         }
         case 4:
             listaLibros.mostrar();
             break;
         case 5:
-            { GenerarPDFLibros generadorPDF(listaLibros);
-
-    // Generar el archivo PDF con los libros
-    generadorPDF.generarPDF("libros_lista.pdf");
+            {
+            GenerarPDFLibros generadorPDF(listaLibros);
+            // Generar el archivo PDF con los libros
+            generadorPDF.generarPDF("libros_lista.pdf");
             }
             break;
         case 6:
-            cout << "Volviendo al men� principal...\n";
+            cout << "Volviendo al menu principal...\n";
             system("pause");
             break;
         }
@@ -189,15 +274,18 @@ int main() {
 
     do {
         system("cls");
-        cout << "--- Men� Principal ---\n";
+        cout << "*****************************************************************************";
+        cout << "\n\t\t\t\t MENU PRINCIPAL \t\t\t\t\n";
+         cout << "*****************************************************************************\n";
         cout << "1. Manejar Autores\n";
         cout << "2. Manejar Libros\n";
         cout << "3. Salir\n";
-        cout << "Ingrese una opci�n: ";
+        cout << "\n";
+        cout << "Ingrese una opcion: ";
         ingresarOpcionMenu(opcionMenu);
 
         if (!validarOpcionMenu(opcionMenu, 1, 3)) {
-            cout << "Opci�n no v�lida. Intente de nuevo.\n";
+            cout << "Opcion no valida. Intente de nuevo.\n";
             continue;
         }
 

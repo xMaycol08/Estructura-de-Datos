@@ -211,7 +211,7 @@
 	<any>
 	<string_view>
 
-1733533586 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
+1733554246 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
 	<string>
 
 1733548400 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
@@ -234,26 +234,26 @@
 1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.cpp
 	"NodoAutores.h"
 
-1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
+1733555346 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
 	"NodoLibros.h"
 	<iostream>
 
-1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.cpp
+1733554246 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.cpp
 	"Validaciones.h"
 	<regex>
 	<iostream>
 	<limits>
 
-1733548400 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
+1733555082 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
 	"ListaAutores.h"
 	"ListaLibros.h"
 	"Validaciones.h"
+	"GenerarPDFLibros.h"
+	"GenerarPDFAutores.h"
 	<iostream>
 	<cstdlib>
 	<limits>
 	<hpdf.h>
-	"GenerarPDFLibros.h"
-	"GenerarPDFAutores.h"
 
 1733549680 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdflibros.cpp
 	"GenerarPDFLibros.h"
