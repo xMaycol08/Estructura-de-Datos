@@ -18,7 +18,7 @@ ListaLibros::~ListaLibros() {
     }
 }
 
-bool ListaLibros::insertar(string titulo, string autor, string isbn, string anioLanzamiento, string genero, float precio, float calificacion) {
+bool ListaLibros::insertar(string titulo, string autor, string isbn, string genero, string anioLanzamiento, float precio, float calificacion) {
     if (buscar(isbn)) {
         cout << "Error: Libro con ISBN " << isbn << " ya existe.\n";
         return false;

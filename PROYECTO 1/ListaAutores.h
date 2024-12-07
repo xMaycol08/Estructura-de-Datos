@@ -23,4 +23,5 @@ public:
     // Nuevas funciones para JSON
     void cargarDesdeArchivoJSON(); // Cargar datos desde un archivo JSON
     void guardarEnArchivoJSON();   // Guardar datos en un archivo JSON
+     NodoAutores* getCabeza() const { return cabeza; }
 };

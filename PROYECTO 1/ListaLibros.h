@@ -28,4 +28,6 @@ public:
 
     // Relación con autores
     string seleccionarAutor(ListaAutores& listaAutores);
+    // Método getter para obtener el nodo cabeza
+     NodoLibros* getCabeza() const { return cabeza; }
 };

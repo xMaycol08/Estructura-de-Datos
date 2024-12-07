@@ -4,7 +4,9 @@
 #include <iostream>
 #include <cstdlib> // Para system()
 #include <limits>
-#include "hpdf.h"
+#include <hpdf.h>
+#include "GenerarPDFLibros.h"
+#include "GenerarPDFAutores.h"
 
 // Men� para manejar las opciones de "Autores"
 void menuAutores(ListaAutores& listaAutores) {
@@ -18,7 +20,8 @@ void menuAutores(ListaAutores& listaAutores) {
         cout << "2. Buscar Autor\n";
         cout << "3. Eliminar Autor\n";
         cout << "4. Mostrar Autores\n";
-        cout << "5. Volver al men� principal\n";
+        cout << "5. Generar PDF Autores\n";
+        cout << "6. Volver al men� principal\n";
         cout << "Ingrese una opci�n: ";
         ingresarOpcionMenu(opcion);
 
@@ -69,12 +72,19 @@ void menuAutores(ListaAutores& listaAutores) {
             listaAutores.mostrar();
             break;
         case 5:
+            {
+                        GenerarPDFAutores generador(listaAutores);
+    generador.generarPDF("autores_lista.pdf");
+            }
+
+            break;
+        case 6:
             cout << "Volviendo al men� principal...\n";
             system("pause");
             break;
         }
 
-    } while (opcion != 5);
+    } while (opcion != 6);
 }
 
 // Men� para manejar las opciones de "Libros"
@@ -89,7 +99,8 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
         cout << "2. Buscar Libro\n";
         cout << "3. Eliminar Libro\n";
         cout << "4. Mostrar Libros\n";
-        cout << "5. Volver al men� principal\n";
+        cout << "5. Generar PDF de Libros\n";
+        cout << "6. Volver al men� principal\n";
         cout << "Ingrese una opci�n: ";
         ingresarOpcionMenu(opcion);
 
@@ -127,7 +138,7 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
                 break;
             }
 
-            listaLibros.insertar(titulo, autor, isbn, anioLanzamiento, genero, precio, calificacion);
+            listaLibros.insertar(titulo, autor, isbn, genero, anioLanzamiento, precio, calificacion);
             break;
         }
         case 2: {
@@ -153,11 +164,18 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
             listaLibros.mostrar();
             break;
         case 5:
+            { GenerarPDFLibros generadorPDF(listaLibros);
+
+    // Generar el archivo PDF con los libros
+    generadorPDF.generarPDF("libros_lista.pdf");
+            }
+            break;
+        case 6:
             cout << "Volviendo al men� principal...\n";
             system("pause");
             break;
         }
-    } while (opcion != 5);
+    } while (opcion != 6);
 }
 
 int main() {

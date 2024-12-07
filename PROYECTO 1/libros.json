@@ -1,11 +1,38 @@
 [
     {
-        "anioLanzamiento": "novela",
+        "anioLanzamiento": "2004",
         "autor": "maycol celi",
         "calificacion": 5.0,
-        "genero": "2004",
+        "genero": "novela",
         "isbn": "18-08",
         "precio": 5.0,
         "titulo": "asd"
+    },
+    {
+        "anioLanzamiento": "2006",
+        "autor": "xavier gomez",
+        "calificacion": 10.0,
+        "genero": "novela",
+        "isbn": "19-08",
+        "precio": 5.0,
+        "titulo": "caperuc"
+    },
+    {
+        "anioLanzamiento": "2007",
+        "autor": "maycol celi",
+        "calificacion": 1.0,
+        "genero": "terror",
+        "isbn": "20-08",
+        "precio": 3.0,
+        "titulo": "caperucasdasd"
+    },
+    {
+        "anioLanzamiento": "2005",
+        "autor": "xavier gomez",
+        "calificacion": 6.0,
+        "genero": "romantico",
+        "isbn": "23-20",
+        "precio": 5.0,
+        "titulo": "sc"
     }
 ]
