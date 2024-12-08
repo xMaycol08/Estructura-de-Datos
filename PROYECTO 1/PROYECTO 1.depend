@@ -1,17 +1,19 @@
 # depslib dependency file v1.0
-1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
+1733674177 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
 	"ListaAutores.h"
 	"Validaciones.h"
 	<iostream>
+	<chrono>
 	"json.hpp"
+	"BackupManager.h"
 
-1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.h
+1733674177 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.h
 	"NodoAutores.h"
 	<string>
 	<fstream>
 	"json.hpp"
 
-1733533586 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.h
+1733674177 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.h
 	<string>
 
 1733512730 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\json.hpp
@@ -214,28 +216,30 @@
 1733554246 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
 	<string>
 
-1733579471 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
+1733674312 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
 	"ListaLibros.h"
+	"BackupManager.h"
 	<iostream>
 	<fstream>
 	<sstream>
+	<chrono>
 	"json.hpp"
 	<iomanip>
 
-1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
+1733674177 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
 	"NodoLibros.h"
 	"ListaAutores.h"
 	<string>
 	<fstream>
 	"json.hpp"
 
-1733579117 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.h
+1733674177 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.h
 	<string>
 
-1733533586 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.cpp
+1733674177 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.cpp
 	"NodoAutores.h"
 
-1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
+1733674177 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
 	"NodoLibros.h"
 	<iostream>
 
@@ -245,16 +249,19 @@
 	<iostream>
 	<limits>
 
-1733579117 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
+1733678765 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
 	"ListaAutores.h"
 	"ListaLibros.h"
 	"Validaciones.h"
 	"GenerarPDFLibros.h"
 	"GenerarPDFAutores.h"
+	"VentanaAyuda.h"
+	"Cursor.h"
 	<iostream>
 	<cstdlib>
 	<limits>
 	<hpdf.h>
+	<conio.h>
 
 1733579754 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdflibros.cpp
 	"GenerarPDFLibros.h"
@@ -359,5 +366,36 @@
 
 1733546197 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\generarpdfautores.h
 	"ListaAutores.h"
+	<string>
+
+1733674178 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\backupmanager.cpp
+	"BackupManager.h"
+	<fstream>
+	<iostream>
+	<chrono>
+	<iomanip>
+	<sstream>
+
+1733674177 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\backupmanager.h
+	<string>
+
+1733675824 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\ventanaayuda.cpp
+	"VentanaAyuda.h"
+	<sstream>
+	<iostream>
+	<windows.h>
+	<cstring>
+	<vector>
+	<sstream>
+
+1733674948 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\ventanaayuda.h
+	<windows.h>
+
+1733679102 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\cursor.cpp
+	<iostream>
+	<conio.h>
+	<cstdlib>
+
+1733678066 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\cursor.h
 	<string>
 

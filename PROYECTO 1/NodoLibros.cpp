@@ -6,7 +6,7 @@ using namespace std;
 NodoLibros::NodoLibros(string _titulo, string _autor, string _isbn, string _genero, string _anioLanzamiento, float _precio, float _calificacion)
     : titulo(_titulo), autor(_autor), isbn(_isbn), genero(_genero), anioLanzamiento(_anioLanzamiento), precio(_precio), calificacion(_calificacion),
       siguiente(nullptr), anterior(nullptr) {
-    // Mensaje de depuración
+    // Mensaje de depuraciï¿½n
   /**  cout << "Nodo creado: " << titulo << ", " << autor << ", " << isbn << ", "
          << genero << ", " << anioLanzamiento << ", " << precio << ", " << calificacion << "\n";**/
 }
