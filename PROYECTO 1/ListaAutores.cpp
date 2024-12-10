@@ -1,9 +1,9 @@
 #include "ListaAutores.h"
 #include "Validaciones.h"
 #include <iostream>
-#include <chrono> // Necesario para trabajar con std::chrono
 #include "json.hpp"
-#include "BackupManager.h" // Aseg�rate de incluir esto
+#include <chrono>
+#include "BackupManager.h"
 
 using json = nlohmann::json;
 
@@ -22,7 +22,7 @@ ListaAutores::~ListaAutores() {
 
 bool ListaAutores::insertar(string cedula, string nombre, string apellido, string fechaPublicacion) {
     if (buscar(cedula)) {
-        cout << "Error: Autor con c�dula " << cedula << " ya existe.\n";
+        cout << "Error: Autor con cedula " << cedula << " ya existe.\n";
         return false;
     }
 
@@ -40,6 +40,7 @@ bool ListaAutores::insertar(string cedula, string nombre, string apellido, strin
         cabeza->setAnterior(nuevo);
     }
     guardarEnArchivoJSON(); // Usar JSON para guardar cambios
+    cout << "Guardado Exitosamente.\n";
     return true;
 }
 
@@ -81,23 +82,23 @@ bool ListaAutores::eliminar(string cedula) {
 
 void ListaAutores::mostrar() {
     if (!cabeza) {
-        cout << "Lista de autores vac�a.\n";
+        cout << "Lista de autores vacia.\n";
         return;
     }
 
     NodoAutores* actual = cabeza;
     do {
-        cout << "C�dula: " << actual->getCedula()
+        cout << "Cedula: " << actual->getCedula()
              << ", Nombre: " << actual->getNombre()
              << ", Apellido: " << actual->getApellido()
-             << ", Fecha de Publicaci�n: " << actual->getFechaPublicacion() << "\n";
+             << ", Fecha de Publicacion: " << actual->getFechaPublicacion() << "\n";
         actual = actual->getSiguiente();
     } while (actual != cabeza);
 }
 
 void ListaAutores::guardarEnArchivoJSON() {
     if (!cabeza) {
-        cout << "La lista de autores est� vac�a. Nada que guardar.\n";
+        cout << "La lista de autores esta vacia.\n";
         return;
     }
 
@@ -118,7 +119,7 @@ void ListaAutores::guardarEnArchivoJSON() {
     if (archivo.is_open()) {
         archivo << jAutores.dump(4);
         archivo.close();
-        cout << "Datos guardados correctamente en 'autores.json'.\n";
+
     } else {
         cout << "Error: No se pudo abrir el archivo para guardar datos.\n";
     }
@@ -146,7 +147,6 @@ void ListaAutores::cargarDesdeArchivoJSON() {
     }
 
 }
-
 void ListaAutores::crearBackup() {
     // Generar nombre con fecha y hora
     auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());

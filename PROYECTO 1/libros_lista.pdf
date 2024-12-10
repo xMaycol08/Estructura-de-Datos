@@ -51,88 +51,48 @@ ET
 BT
 /F1 12 Tf
 50 700 Td
-(T\355tulo: masds) Tj
+(Titulo: rogramacion iii) Tj
 ET
 BT
 /F1 12 Tf
 50 680 Td
-(Autor: maycol celi) Tj
+(Autor: juan perez) Tj
 ET
 BT
 /F1 12 Tf
 50 660 Td
-(ISBN: 186) Tj
+(ISBN: 1) Tj
 ET
 BT
 /F1 12 Tf
 50 640 Td
-(G\351nero: cs) Tj
+(Genero: masculino) Tj
 ET
 BT
 /F1 12 Tf
 50 620 Td
-(A\361o de Lanzamiento: 08\05712\0572005) Tj
+(Ano de Lanzamiento: 12\05711\0572003) Tj
 ET
 BT
 /F1 12 Tf
 50 600 Td
-(Precio: $4.00) Tj
+(Precio: $14000000.00) Tj
 ET
 BT
 /F1 12 Tf
 50 580 Td
-(Calificaci\363n: 2.00) Tj
+(Calificacion: 10.00) Tj
 ET
 BT
 /F1 10 Tf
 50 550 Td
 (--------------------------------------------) Tj
 ET
-BT
-/F1 12 Tf
-50 530 Td
-(T\355tulo: m) Tj
-ET
-BT
-/F1 12 Tf
-50 510 Td
-(Autor: asd c) Tj
-ET
-BT
-/F1 12 Tf
-50 490 Td
-(ISBN: 16) Tj
-ET
-BT
-/F1 12 Tf
-50 470 Td
-(G\351nero: asd) Tj
-ET
-BT
-/F1 12 Tf
-50 450 Td
-(A\361o de Lanzamiento: 08\05712\0572004) Tj
-ET
-BT
-/F1 12 Tf
-50 430 Td
-(Precio: $3.00) Tj
-ET
-BT
-/F1 12 Tf
-50 410 Td
-(Calificaci\363n: 4.00) Tj
-ET
-BT
-/F1 10 Tf
-50 380 Td
-(--------------------------------------------) Tj
-ET
 
 endstream
 endobj
 6 0 obj
-979
+570
 endobj
 7 0 obj
 <<
@@ -150,8 +110,8 @@ xref
 0000000123 00000 n
 0000000184 00000 n
 0000000370 00000 n
-0000001403 00000 n
-0000001422 00000 n
+0000000994 00000 n
+0000001013 00000 n
 trailer
 <<
 /Root 1 0 R
@@ -159,5 +119,5 @@ trailer
 /Size 8
 >>
 startxref
-1520
+1111
 %%EOF

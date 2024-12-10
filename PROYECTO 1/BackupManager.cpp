@@ -1,53 +1,26 @@
 #include "BackupManager.h"
-#include <fstream>
 #include <iostream>
-#include <chrono>
-#include <iomanip>
-#include <sstream>
+#include <vector>
+#include <dirent.h> // Para manejo de directorios en sistemas compatibles con POSIX
 
-std::string BackupManager::obtenerFechaHora() {
-    auto now = std::chrono::system_clock::now();
-    auto time = std::chrono::system_clock::to_time_t(now);
-    std::ostringstream oss;
-    oss << std::put_time(std::localtime(&time), "%Y-%m-%d-%H-%M-%S");
-    return oss.str();
-}
+std::vector<std::string> BackupManager::listarArchivosEnCarpeta(const std::string& carpeta) {
+    std::vector<std::string> archivos;
+    DIR* dir;
+    struct dirent* entry;
 
-void BackupManager::crearBackupConFecha(const std::string& carpeta, const std::string& archivoOriginal) {
-    // Generar fecha y hora
-    std::string fechaHora = obtenerFechaHora();
-    std::string archivoBackup = carpeta + "/" + archivoOriginal + "-" + fechaHora + "-backup.json";
-
-    // Abrir los flujos de origen y destino
-    std::ifstream origen(archivoOriginal, std::ios::binary);
-    std::ofstream destino(archivoBackup, std::ios::binary);
-
-    if (!origen.is_open() || !destino.is_open()) {
-        std::cout << "Error: No se pudo crear el backup en la carpeta " << carpeta << ".\n";
-        return;
+    dir = opendir(carpeta.c_str());
+    if (!dir) {
+        std::cerr << "Error: No se pudo abrir la carpeta " << carpeta << "\n";
+        return archivos;
     }
 
-    // Copiar los datos
-    destino << origen.rdbuf();
-    origen.close();
-    destino.close();
-
-    std::cout << "Backup creado correctamente: " << archivoBackup << "\n";
-}
-
-void BackupManager::restaurarBackup(const std::string& carpeta, const std::string& archivoBackup, const std::string& archivoDestino) {
-    std::string rutaBackup = carpeta + "/" + archivoBackup;
-
-    std::ifstream origen(rutaBackup, std::ios::binary);
-    std::ofstream destino(archivoDestino, std::ios::binary);
-
-    if (!origen.is_open() || !destino.is_open()) {
-        std::cout << "Error: No se pudo restaurar el backup desde " << rutaBackup << ".\n";
-        return;
+    while ((entry = readdir(dir)) != nullptr) {
+        std::string nombreArchivo = entry->d_name;
+        if (nombreArchivo != "." && nombreArchivo != "..") {
+            archivos.push_back(nombreArchivo);
+        }
     }
 
-    // Copiar los datos
-    destino << origen.rdbuf();
-    origen.close();
-    destino.close();
+    closedir(dir);
+    return archivos;
 }

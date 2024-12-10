@@ -41,17 +41,17 @@ void GenerarPDFAutores::generarPDF(const std::string& nombreArchivo) {
     // Recorremos la lista de autores y generamos su información en el PDF
     NodoAutores* actual = listaAutores.getCabeza();
     if (actual == nullptr) {
-        std::cout << "La lista de autores está vacía." << std::endl;
+        std::cout << "La lista de autores está vacia." << std::endl;
         return;
     }
 
     // Escribir los autores en el PDF
     do {
         // Separar cada campo en una línea diferente
-        std::string cedulaTexto = "Cédula: " + actual->getCedula();
+        std::string cedulaTexto = "Cedula: " + actual->getCedula();
         std::string nombreTexto = "Nombre: " + actual->getNombre();
         std::string apellidoTexto = "Apellido: " + actual->getApellido();
-        std::string fechaTexto = "Fecha de Publicación: " + actual->getFechaPublicacion();
+        std::string fechaTexto = "Fecha de Publicacion: " + actual->getFechaPublicacion();
 
         // Escribir la cédula
         HPDF_Page_BeginText(page);

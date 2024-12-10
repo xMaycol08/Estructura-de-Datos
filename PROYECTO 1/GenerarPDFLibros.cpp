@@ -43,18 +43,18 @@ void GenerarPDFLibros::generarPDF(const std::string& nombreArchivo) {
     // Recorremos la lista de libros y generamos su información en el PDF
     NodoLibros* actual = listaLibros.getCabeza();
     if (actual == nullptr) {
-        std::cout << "La lista de libros está vacía." << std::endl;
+        std::cout << "La lista de libros esta vacia." << std::endl;
         return;
     }
 
     // Escribir los libros en el PDF
     do {
         // Separar cada campo en una línea diferente
-std::string tituloTexto = "Título: " + actual->getTitulo();
+std::string tituloTexto = "Titulo: " + actual->getTitulo();
 std::string autorTexto = "Autor: " + actual->getAutor();
 std::string isbnTexto = "ISBN: " + actual->getIsbn();
-std::string generoTexto = "Género: " + actual->getGenero();
-std::string anioTexto = "Año de Lanzamiento: " + actual->getAnioLanzamiento();
+std::string generoTexto = "Genero: " + actual->getGenero();
+std::string anioTexto = "Ano de Lanzamiento: " + actual->getAnioLanzamiento();
 
 // Formatear precio con dos decimales
 std::ostringstream precioStream;
@@ -64,7 +64,7 @@ std::string precioTexto = "Precio: $" + precioStream.str();
 // Formatear calificación con dos decimales
 std::ostringstream calificacionStream;
 calificacionStream << std::fixed << std::setprecision(2) << actual->getCalificacion();
-std::string calificacionTexto = "Calificación: " + calificacionStream.str();
+std::string calificacionTexto = "Calificacion: " + calificacionStream.str();
 
         // Escribir el título
         HPDF_Page_BeginText(page);
