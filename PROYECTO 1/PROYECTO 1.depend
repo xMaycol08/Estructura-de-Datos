@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1733718497 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
+1733898337 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listaautores.cpp
 	"ListaAutores.h"
 	"Validaciones.h"
 	<iostream>
@@ -213,10 +213,10 @@
 	<any>
 	<string_view>
 
-1733718497 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
+1733894900 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
 	<string>
 
-1733761098 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
+1733898268 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
 	"ListaLibros.h"
 	"BackupManager.h"
 	<iostream>
@@ -243,7 +243,7 @@
 	"NodoLibros.h"
 	<iostream>
 
-1733764062 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.cpp
+1733894900 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.cpp
 	"Validaciones.h"
 	<regex>
 	<iostream>
@@ -251,7 +251,7 @@
 	<ctime>
 	<string>
 
-1733763917 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
+1733894900 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
 	"ListaAutores.h"
 	"ListaLibros.h"
 	"Validaciones.h"

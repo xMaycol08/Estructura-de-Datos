@@ -54,12 +54,20 @@ void menuAutores(ListaAutores& listaAutores) {
 
        case 1: {
            string cedula, nombre, apellido, fechaPublicacion;
-           while (true) {
-                cout << "Ingrese la cedula: ";
-                cin >> cedula;
-                if (validarCedula(cedula)) break;
-                cout << "Error: La cedula ingresada no es valida\n";
-                }
+          while (true) {
+    cout << "Ingrese la cedula: ";
+    cin >> cedula;
+
+    if (!validarCedula(cedula)) {
+        cout << "Error: La cedula ingresada no es valida. Intente de nuevo.\n";
+        continue;
+    }
+    if (listaAutores.buscar(cedula)) {
+        cout << "Error: El autor con cedula " << cedula << " ya existe. Ingrese una cedula diferente.\n";
+    } else {
+        break;
+    }
+    }
           while (true) {
         cout << "Ingrese nombre: ";
         cin >> nombre;
@@ -219,28 +227,33 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
     string autor = listaLibros.seleccionarAutor(listaAutores);
     if (autor.empty()) break;
 
-    do {
-        cout << "Ingrese titulo: ";
-        cin.ignore();
-        getline(cin, titulo);
-        if (!validarTexto(titulo)) {
-            cout << "Error: El titulo solo puede contener letras y espacios.\n";
-        }
-    } while (!validarTexto(titulo));
+   do {
+    cout << "Ingrese titulo: ";
+    cin.ignore();
+    getline(cin, titulo);
+} while (titulo.empty());
 
-    do {
+
+    while(true) {
         cout << "Ingrese ISBN: ";
         getline(cin, isbn);
         if (!validarISBN(isbn)) {
-            cout << "Error: El ISBN solo puede contener digitos y guiones.\n";
+            cout << "Error: El ISBN solo puede contener digitos y guiones y formato ej.(15-1).\n";
+        continue;
         }
-    } while (!validarISBN(isbn));
+        if(listaLibros.buscar(isbn)){
+            cout << "Error: El libro con ISBN " << isbn << " ya existe. Ingrese una ISBN diferente.\n";
+            continue;
+        }else{
+            break;
+        }
+    }
 
     do {
-        cout << "Ingrese genero: ";
+        cout << "Ingrese su Clasificacion: ";
         getline(cin, genero);
         if (!validarTexto(genero)) {
-            cout << "Error: El genero solo puede contener letras y espacios.\n";
+            cout << "Error: El clasificacion solo puede contener letras y espacios.\n";
         }
     } while (!validarTexto(genero));
 
@@ -278,7 +291,7 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
         cout << "Ingrese ISBN del libro: ";
         cin >> isbn;
         if (!validarISBN(isbn)) {
-            cout << "Error: El ISBN debe contener solo digitos y guiones.\n";
+            cout << "Error: El ISBN debe contener solo digitos y guiones y formato ej.(15-1).\n";
         }
     } while (!validarISBN(isbn));
 

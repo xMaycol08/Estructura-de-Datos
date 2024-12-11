@@ -51,37 +51,37 @@ ET
 BT
 /F1 12 Tf
 50 700 Td
-(Titulo: rogramacion iii) Tj
+(Titulo: programacion 3) Tj
 ET
 BT
 /F1 12 Tf
 50 680 Td
-(Autor: juan perez) Tj
+(Autor: maycol celi) Tj
 ET
 BT
 /F1 12 Tf
 50 660 Td
-(ISBN: 1) Tj
+(ISBN: 18-08) Tj
 ET
 BT
 /F1 12 Tf
 50 640 Td
-(Genero: masculino) Tj
+(Genero: novela) Tj
 ET
 BT
 /F1 12 Tf
 50 620 Td
-(Ano de Lanzamiento: 12\05711\0572003) Tj
+(Ano de Lanzamiento: 02\05729\0572024) Tj
 ET
 BT
 /F1 12 Tf
 50 600 Td
-(Precio: $14000000.00) Tj
+(Precio: $4.00) Tj
 ET
 BT
 /F1 12 Tf
 50 580 Td
-(Calificacion: 10.00) Tj
+(Calificacion: 5.00) Tj
 ET
 BT
 /F1 10 Tf
@@ -92,7 +92,7 @@ ET
 endstream
 endobj
 6 0 obj
-570
+563
 endobj
 7 0 obj
 <<
@@ -110,8 +110,8 @@ xref
 0000000123 00000 n
 0000000184 00000 n
 0000000370 00000 n
-0000000994 00000 n
-0000001013 00000 n
+0000000987 00000 n
+0000001006 00000 n
 trailer
 <<
 /Root 1 0 R
@@ -119,5 +119,5 @@ trailer
 /Size 8
 >>
 startxref
-1111
+1104
 %%EOF

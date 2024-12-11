@@ -1,20 +1,11 @@
 [
     {
-        "anioLanzamiento": "08/02/2003",
-        "autor": "xavier gomez",
-        "calificacion": 4.0,
-        "genero": "me",
-        "isbn": "189",
-        "precio": 6.0,
-        "titulo": "ma"
-    },
-    {
-        "anioLanzamiento": "08/08/2005",
-        "autor": "xavier gomez",
-        "calificacion": 4.0,
-        "genero": "sc",
-        "isbn": "1963",
-        "precio": 6.0,
-        "titulo": "asd"
+        "anioLanzamiento": "02/29/2024",
+        "autor": "maycol celi",
+        "calificacion": 5.0,
+        "genero": "novela",
+        "isbn": "18-08",
+        "precio": 4.0,
+        "titulo": "programacion 3"
     }
 ]

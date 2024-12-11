@@ -222,6 +222,12 @@ string ListaLibros::seleccionarAutor(ListaAutores& listaAutores) {
 
 
 void ListaLibros::crearBackup() {
+    // Verificar si la lista está vacía
+    if (!cabeza) {
+        cout << "No hay datos para hacer el backup.\n";
+        return;
+    }
+
     // Generar nombre con fecha y hora
     auto now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
     tm localTime;
@@ -257,6 +263,7 @@ void ListaLibros::crearBackup() {
     cout << "Backup creado exitosamente: " << buffer << "\n";
 }
 
+
 void ListaLibros::restaurarBackup(const string& nombreArchivo) {
     ifstream archivo("BackupLibros/" + nombreArchivo); // Leer desde la carpeta BackupLibros
     if (!archivo.is_open()) {
@@ -267,6 +274,12 @@ void ListaLibros::restaurarBackup(const string& nombreArchivo) {
     json jLibros;
     archivo >> jLibros;
     archivo.close();
+
+    // Comprobar si el archivo está vacío
+    if (jLibros.empty()) {
+        cout << "No existe nada en el backup.\n";
+        return;
+    }
 
     // Liberar memoria de la lista actual (si existe)
     if (cabeza) {
