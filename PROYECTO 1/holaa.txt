@@ -1,0 +1,118 @@
+// Estructura de Nodo y Lista (suposición basada en el contexto del proyecto)
+struct Nodo {
+    std::string dato;
+    Nodo* siguiente;
+    Nodo(const std::string& dato) : dato(dato), siguiente(nullptr) {}
+};
+
+class Lista {
+private:
+    Nodo* cabeza;
+
+public:
+    Lista() : cabeza(nullptr) {}
+
+    // Agregar elemento a la lista
+    void agregar(const std::string& dato) {
+        Nodo* nuevo = new Nodo(dato);
+        if (!cabeza) {
+            cabeza = nuevo;
+        } else {
+            Nodo* temp = cabeza;
+            while (temp->siguiente) {
+                temp = temp->siguiente;
+            }
+            temp->siguiente = nuevo;
+        }
+    }
+
+    // 1. Búsqueda Recursiva
+    bool buscarRecursivo(Nodo* nodo, const std::string& valor) {
+        if (!nodo) return false;
+        if (nodo->dato == valor) return true;
+        return buscarRecursivo(nodo->siguiente, valor);
+    }
+
+    bool buscar(const std::string& valor) {
+        return buscarRecursivo(cabeza, valor);
+    }
+
+    // 2. Inversión de la Lista
+    Nodo* invertirRecursivo(Nodo* nodo) {
+        if (!nodo || !nodo->siguiente) return nodo;
+        Nodo* nuevaCabeza = invertirRecursivo(nodo->siguiente);
+        nodo->siguiente->siguiente = nodo;
+        nodo->siguiente = nullptr;
+        return nuevaCabeza;
+    }
+
+    void invertir() {
+        cabeza = invertirRecursivo(cabeza);
+    }
+
+    // 3. Conteo de Elementos Recursivo
+    int contarRecursivo(Nodo* nodo) {
+        if (!nodo) return 0;
+        return 1 + contarRecursivo(nodo->siguiente);
+    }
+
+    int contar() {
+        return contarRecursivo(cabeza);
+    }
+
+    // 4. Filtrado por Criterio
+    void filtrarRecursivo(Nodo* nodo, Lista& nuevaLista, const std::string& criterio) {
+        if (!nodo) return;
+        if (nodo->dato.find(criterio) != std::string::npos) {
+            nuevaLista.agregar(nodo->dato);
+        }
+        filtrarRecursivo(nodo->siguiente, nuevaLista, criterio);
+    }
+
+    Lista filtrar(const std::string& criterio) {
+        Lista nuevaLista;
+        filtrarRecursivo(cabeza, nuevaLista, criterio);
+        return nuevaLista;
+    }
+
+    // Mostrar lista
+    void mostrar() {
+        Nodo* temp = cabeza;
+        while (temp) {
+            std::cout << temp->dato << " -> ";
+            temp = temp->siguiente;
+        }
+        std::cout << "NULL" << std::endl;
+    }
+};
+
+// Ejemplo de uso
+int main() {
+    Lista lista;
+    lista.agregar("Libro A");
+    lista.agregar("Libro B");
+    lista.agregar("Libro C");
+
+    std::cout << "Lista original:" << std::endl;
+    lista.mostrar();
+
+    // Buscar elemento
+    std::string buscar = "Libro B";
+    std::cout << "\nBuscando '" << buscar << "': " << (lista.buscar(buscar) ? "Encontrado" : "No encontrado") << std::endl;
+
+    // Invertir lista
+    lista.invertir();
+    std::cout << "\nLista invertida:" << std::endl;
+    lista.mostrar();
+
+    // Contar elementos
+    std::cout << "\nCantidad de elementos en la lista: " << lista.contar() << std::endl;
+
+    // Filtrar elementos
+    std::string criterio = "B";
+    Lista listaFiltrada = lista.filtrar(criterio);
+    std::cout << "\nLista filtrada (criterio: '" << criterio << "'):" << std::endl;
+    listaFiltrada.mostrar();
+
+    return 0;
+}

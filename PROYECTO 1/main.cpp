@@ -50,8 +50,7 @@ void menuAutores(ListaAutores& listaAutores) {
         }
 
 
-        switch (opcion) {
-
+       switch (opcion) {
        case 1: {
            string cedula, nombre, apellido, fechaPublicacion;
           while (true) {
@@ -196,21 +195,23 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
             "5. Generar PDF de Libros",
             "6. Crear Backup de Libros",
             "7. Restaurar Backup de Libros",
-            "8. Volver al menu principal"
+            "8. Filtrar Libros por Año",
+            "9. Volver al menu principal"
         };
 
-        Cursor cursor(8);  // Crear cursor para 8 opciones
-        cursor.actualizarMenu(opciones, 8);
+
+        Cursor cursor(9);  // Crear cursor para 9 opciones
+        cursor.actualizarMenu(opciones, 9);
 
         while (true) {
             if (cursor.teclaPresionada()) {
                 char tecla = _getch();
                 if (tecla == 72) {  // Flecha arriba
                     cursor.moverArriba();
-                    cursor.actualizarMenu(opciones, 8);
+                    cursor.actualizarMenu(opciones, 9);
                 } else if (tecla == 80) {  // Flecha abajo
                     cursor.moverAbajo();
-                    cursor.actualizarMenu(opciones, 8);
+                    cursor.actualizarMenu(opciones, 9);
                 } else if (tecla == 13) {  // Enter
                     opcion = cursor.getPosicion() + 1;
                     break;
@@ -356,11 +357,15 @@ void menuLibros(ListaLibros& listaLibros, ListaAutores& listaAutores) {
     break;
             }
             case 8:
-                cout << "Volviendo al menu principal...\n";
-                system("pause");
-                break;
+            listaLibros.filtrarPorAnio(); // Llamar a la nueva función
+            system("pause");
+            break;
+        case 9:
+            cout << "Volviendo al menu principal...\n";
+            system("pause");
+            break;
         }
-    } while (opcion != 8);
+    } while (opcion != 9);
 }
 
 int main() {

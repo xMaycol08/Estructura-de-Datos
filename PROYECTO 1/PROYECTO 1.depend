@@ -216,7 +216,7 @@
 1733894900 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\validaciones.h
 	<string>
 
-1733898268 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
+1733935272 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.cpp
 	"ListaLibros.h"
 	"BackupManager.h"
 	<iostream>
@@ -226,10 +226,11 @@
 	"json.hpp"
 	<iomanip>
 
-1733760894 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
+1733935839 c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\listalibros.h
 	"NodoLibros.h"
 	"ListaAutores.h"
 	<string>
+	<regex>
 	<fstream>
 	"json.hpp"
 
@@ -239,7 +240,7 @@
 1733720693 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodoautores.cpp
 	"NodoAutores.h"
 
-1733718497 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
+1733935443 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\nodolibros.cpp
 	"NodoLibros.h"
 	<iostream>
 
@@ -251,7 +252,7 @@
 	<ctime>
 	<string>
 
-1733894900 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
+1733935839 source:c:\users\admin\desktop\espe\pregraso s2 2024\estructura de datos\proyecto 1\main.cpp
 	"ListaAutores.h"
 	"ListaLibros.h"
 	"Validaciones.h"
