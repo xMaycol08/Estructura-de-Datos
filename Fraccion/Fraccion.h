@@ -23,7 +23,9 @@ public:
     T getDenominador() const;
 
     // Método para procesar la suma de dos objetos Fraccion
-    Fraccion<T> procesar(const Fraccion<T>& obj1, const Fraccion<T>& obj2);
+     Fraccion<T> procesarSuma(const Fraccion<T>& obj1, const Fraccion<T>& obj2);
+    Fraccion<T> procesarResta(const Fraccion<T>& obj1, const Fraccion<T>& obj2);
+    Fraccion<T> procesarMultiplicacion(const Fraccion<T>& obj1, const Fraccion<T>& obj2);
 
 private:
     T numerador;
