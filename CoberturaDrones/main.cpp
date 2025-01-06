@@ -1,3 +1,10 @@
+/***********************************************************************
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+ * ALUMNOS:  Maycol Celi
+ * FECHA ENTREGA:  06 de enero de 2025
+ * PROGRAMA: Busqueda Binaria - Cobertura Drones.
+ * NRC: 1992
+ ***********************************************************************/
 #include <iostream>
 #include <vector>
 #include <sstream> // Incluir la cabecera para std::stringstream
