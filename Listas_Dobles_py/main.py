@@ -1,3 +1,12 @@
+"""
+***********************************************************************
+* UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+* ALUMNOS:  Maycol Celi
+* FECHA ENTREGA: 06 de enero de 2025
+* PROGRAMA: Listas Dobles en python.
+* NRC: 1992
+***********************************************************************
+"""
 from ListaDoble import ListaDoble
 from Validaciones import *
 from MetodoOrdenamientoExterno import MetodoOrdenamientoExterno
