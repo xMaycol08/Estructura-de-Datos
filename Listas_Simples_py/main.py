@@ -1,10 +1,12 @@
-'''
-Module:  main.cpp
-Author:  Maycol Celi.
-Date: 17/12/2024
-Purpose: Metodo de Ordenamiento Externo para lista simple con el metodo (Distribution sort)
-University: Universidad de las Fuerzas Armadas - ESPE
-'''
+"""
+***********************************************************************
+* UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+* ALUMNOS:  Maycol Celi
+* FECHA ENTREGA: 06 de enero de 2025
+* PROGRAMA: Listas Simples en python.
+* NRC: 1992
+***********************************************************************
+"""
 import os
 from lista_simple import ListaSimple
 from metodo_ordenamiento_externo import MetodoOrdenamientoExterno
