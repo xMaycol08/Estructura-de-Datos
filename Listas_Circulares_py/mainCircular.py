@@ -1,3 +1,13 @@
+"""
+***********************************************************************
+* UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+* ALUMNOS:  Maycol Celi
+* FECHA ENTREGA: 06 de enero de 2025
+* PROGRAMA: Listas Circulares en python.
+* NRC: 1992
+***********************************************************************
+"""
+
 from ListaCircular import ListaCircular
 from Validaciones import *
 from MetodoOrdenamientoExterno import MetodoOrdenamientoExterno
