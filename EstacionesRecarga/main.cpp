@@ -1,3 +1,10 @@
+/***********************************************************************
+ * UNIVERSIDAD DE LAS FUERZAS ARMADAS "ESPE"
+ * ALUMNOS:  Maycol Celi
+ * FECHA ENTREGA:  06 de enero de 2025
+ * PROGRAMA: Busqueda Binaria - Problema 1.
+ * NRC: 1992
+ ***********************************************************************/
 #include <iostream>
 #include <vector>
 #include "Estaciones.h"
